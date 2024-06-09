@@ -19,11 +19,11 @@ convite80_max = max(0, convidados - convite0 - convite50)
 convite80 = st.slider("Número de Convites com 20% de Desconto:", 0, convite80_max, step=1)
 
 # Valor do Convite
-valor_convite = st.slider("Valor do Convite:", 90.0, 150.0, step=0.01)
+valor_convite = st.slider("Valor do Convite:", 90.0, 150.0, step=10.0)
 
 # Calcular o custo total dos convites e número de convites restantes
 custo_total, convite_restante = calcular_custo_total(convidados, convite0, convite50, convite80, valor_convite)
 
 # Mostrar o valor total dos convites e o número de convites restantes
 st.write(f"O custo total dos convites é: R${custo_total:.2f}")
-st.write(f"Número de Convites Restantes: {convite_restante}")
+st.write(f"Convites pagos integralmente: {convite_restante}")
