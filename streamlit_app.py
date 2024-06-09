@@ -26,4 +26,4 @@ custo_total, convite_restante = calcular_custo_total(convidados, convite0, convi
 
 # Mostrar o valor total dos convites e o número de convites restantes
 st.write(f"O custo total dos convites é: R${custo_total:.2f}")
-st.write(f"Convites pagos integralmente: {convite_restante}")
+st.write(f"Convites valor integral: {convite_restante}")
