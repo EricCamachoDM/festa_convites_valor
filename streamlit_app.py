@@ -15,10 +15,11 @@ convite0 = st.slider("Número de Convites Gratuitos:", 0, convidados, step=1)
 convite50 = st.slider("Número de Convites com 50% de Desconto:", 0, convidados - convite0, step=1)
 convite80 = st.slider("Número de Convites com 20% de Desconto:", 0, convidados - convite0 - convite50, step=1)
 convite100 = convidados - convite0 - convite50 - convite80
-valor_convite = st.slider("Valor do Convite:", 90.0, 150.0, step=10.0)
+valor_convite = st.slider("Valor do Convite:", 90.0, 150.0, step=0.01)
 
-# Botão para calcular
-if st.button("Calcular"):
-    custo_total, convite_restante = calcular_custo_total(convidados, convite0, convite50, convite80, convite100, valor_convite)
-    st.write(f"O custo total dos convites é: R${custo_total:.2f}")
-    st.write(f"Número de Convites Restantes: {convite_restante}")
+# Calcular o custo total dos convites e número de convites restantes
+custo_total, convite_restante = calcular_custo_total(convidados, convite0, convite50, convite80, convite100, valor_convite)
+
+# Mostrar o valor total dos convites
+st.write(f"O custo total dos convites é: R${custo_total:.2f}")
+st.write(f"Número de Convites Restantes: {convite_restante}")
